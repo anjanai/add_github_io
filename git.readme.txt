@@ -5,3 +5,39 @@ git commit -m "..."
 git remote add origin https://github.com/anjanai/<proj>.git
 (Create <proj>.git on github.com)
 git push -u origin master
+
+(For github.io)
+(Create index.html)
+git checkout -b gh-pages
+git commit -m "Add index.html"
+git push origin gh-pages
+
+<In master>
+$ git add .
+$ git status // to see what changes are going to be commited
+$ git commit -m 'Some descriptive commit message'
+$ git push origin master
+
+<To sync with gh-pages>
+$ git checkout gh-pages // go to the gh-pages branch
+$ git rebase master // bring gh-pages up to date with master
+$ git push origin gh-pages // commit the changes
+$ git checkout master // return to the master branch
+
+If you want to use your gh-pages branch only:
+https://www.xanthir.com/b4Zz0
+
+1.git checkout -b gh-pages
+git push origin gh-pages
+
+2. Go to https://github.com/anjanai/<proj>/settings/branches
+Change default branch to gh-pages
+
+3. (Switch to gh-pages branch AND THEN delete local master)
+git branch -d master
+
+4. Delete the origin remote master branch
+git push origin :master
+
+
+
